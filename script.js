@@ -20,7 +20,7 @@
     
     if(typeof input === "object")
     {
-      shiftAmount = input.shift;
+      shiftAmount = input.shift % (alphabet.length);
       STRING = input.msg.toLowerCase();
     } 
     else 
@@ -56,8 +56,19 @@
       shift: document.getElementById("shift").value
     });
   });
-  document.getElementById("shift").addEventListener("keyup", function(){
+
+  document.getElementById("shift").addEventListener("keyup", function(alphabet){
     let itsValue = this.value;
+
+ 
+    // if (itsValue > alphabet.length){
+    //   itsValue = (itsValue - (alphabet.length));
+    //   console.log(itsValue);
+    // }
+    // if ((itsValue < 0)|| !isNaN(itsValue)) {
+    //   alert('Смещение должно быть неотрицательным числом!')
+    // }
+    
     document.getElementById("output").textContent = CeasarsCipher({
       msg: document.getElementById("message").value,
       shift: itsValue
@@ -70,14 +81,4 @@
     });
 
 
-
-
-function form() {
-  let a = document.getElementsByName('alphabet');
-  for (let i=0;i<a.length; i++) {
-    if (a[i].checked) {
-      alert('Выбран '+i+' radiobutton');
-    }
-  }
-}
 
