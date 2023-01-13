@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: block;
+  text-align: center;
+  background: rgb(64, 60, 60);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+
+#container{
+  margin-top: 300px;
+}
+h1{
+  margin-bottom: 80px;
+}
+
+input {
+  padding: 10px;
+  border: 0px;
+  outline: 0;
+  border-bottom: 2px solid rgba(255,255,255,0.6);
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  font-size: 22px;
+}
+p {
+  font-size: 16px;
+  color: whitesmoke;
+}
+
+#output {
+  padding: 10px;
+  font-size: 22px;
+  border: 0px;
+  outline: 0;
+  border-bottom: 2px solid rgba(255,255,255,0.6);
+  text-align: center;
+}
