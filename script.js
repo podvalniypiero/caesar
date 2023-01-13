@@ -2,10 +2,10 @@
   "use strict";
   window.CeasarsCipher = function(input){
         
-    let alphabet = "АБВГДЕЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase(), //алфавит полностью rus 33 буквы
-    //let alphabet = "АБВГДЕЕЁЖЗИКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase(), //алфавит без Й
-    //let alphabet = "АБВГДЕЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase(), //алфавит без Ё
-    //let alphabet = "АБВГДЕЕЖЗИКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase(), //алфавит без Й и без Ё
+    let alphabet = "АБВГДЕЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase() //алфавит полностью rus 33 буквы
+    let alphabetNoJ = "АБВГДЕЕЁЖЗИКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase() //алфавит без Й
+    let alphabetNoE = "АБВГДЕЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase()//алфавит без Ё
+    let alphabetNoEJ = "АБВГДЕЕЖЗИКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase(), //алфавит без Й и без Ё
 
     //let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toLowerCase(), // en
         
@@ -65,3 +65,16 @@
       msg: document.getElementById("message").value,
       shift: document.getElementById("shift").value
     });
+
+
+
+
+function form() {
+  let a = document.getElementsByName('alphabet');
+  for (let i=0;i<a.length; i++) {
+    if (a[i].checked) {
+      alert('Выбран '+i+' radiobutton');
+    }
+  }
+}
+
