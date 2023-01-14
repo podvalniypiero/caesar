@@ -18,8 +18,36 @@
     let alphabetLength = alphabet.length;
     console.log(alphabetLength);
     
+    console.log(isNaN(input.shift));
+    if (isNaN(input.shift)){
+      //alert('Сдвиг должен быть числом!');
+      Swal.fire({
+        title: 'Шаг должен быть числом!',
+        text: "попробуйте снова...",
+        icon: 'warning',
+        showCancelButton: true,
+        cancelButtonText: 'Закрыть',
+        showConfirmButton: false, 
+        cancelButtonColor: 'rgb(64, 60, 60);',
+        
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+    }
+    //else{}
+
     if(typeof input === "object")
-    {
+    {  
+      // if (!isNaN(input.shift)) {
+      //   alert('Сдвиг должен быть числом!...');
+      // }
+      // else
       shiftAmount = input.shift % (alphabet.length);
       STRING = input.msg.toLowerCase();
     } 
@@ -59,15 +87,6 @@
 
   document.getElementById("shift").addEventListener("keyup", function(alphabet){
     let itsValue = this.value;
-
- 
-    // if (itsValue > alphabet.length){
-    //   itsValue = (itsValue - (alphabet.length));
-    //   console.log(itsValue);
-    // }
-    // if ((itsValue < 0)|| !isNaN(itsValue)) {
-    //   alert('Смещение должно быть неотрицательным числом!')
-    // }
     
     document.getElementById("output").textContent = CeasarsCipher({
       msg: document.getElementById("message").value,
