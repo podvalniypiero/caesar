@@ -20,7 +20,6 @@
     
     console.log(isNaN(input.shift));
     if (isNaN(input.shift)){
-      //alert('Сдвиг должен быть числом!');
       Swal.fire({
         title: 'Шаг должен быть числом!',
         text: "попробуйте снова...",
@@ -40,14 +39,9 @@
         }
       })
     }
-    //else{}
 
     if(typeof input === "object")
     {  
-      // if (!isNaN(input.shift)) {
-      //   alert('Сдвиг должен быть числом!...');
-      // }
-      // else
       shiftAmount = input.shift % (alphabet.length);
       STRING = input.msg.toLowerCase();
     } 
@@ -99,5 +93,15 @@
       shift: document.getElementById("shift").value
     });
 
+    function choice(){
+			let checkChoice = document.querySelector('input[name="alphabet"]:checked');
+			console.log(checkChoice.value);
+			// if(checkChoice  = null){
+			// 	alert('Необход');
+			// }
+			// else {
+			// 	document.getElementById("disp").innerHTML = "No one selected";
+			// }
+		}
 
 
