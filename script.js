@@ -2,18 +2,52 @@
   "use strict";
   window.CeasarsCipher = function(input){
         
-    let alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase(), //алфавит полностью rus 33 буквы
-    //let alphabet = "АБВГДЕЁЖЗИКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase(), //алфавит без Й
-    //let alphabet = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase()//алфавит без Ё
-    //let alphabet = "АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase(), //алфавит без Й и без Ё
+    let alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase()  //алфавит полностью rus 33 буквы ДЕФОЛТ
 
-    //let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toLowerCase(), // en
+    // let alphabet1 = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase()  //алфавит полностью rus 33 буквы
+    // let alphabet2 = "АБВГДЕЁЖЗИКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase() //алфавит без Й
+    // let alphabet3 = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase() //алфавит без Ё
+    // let alphabet4 = "АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase() //алфавит без Й и без Ё
+
+    let checkChoice = document.querySelector('input[name="alphabet"]:checked');
+
+			console.log(checkChoice.value);
+      console.log(checkChoice.id);
+
+      async function radioCheck(){
+      try{
+			if((checkChoice.id) === "one") {
+        alphabet =  "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase()  //алфавит полностью rus 33 буквы
+        console.log(alphabet);
+		  }
+      else if ((checkChoice.id) === "two") {
+        alphabet =  "АБВГДЕЁЖЗИКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase() //алфавит без Й
+        console.log(alphabet);
+		  }
+      else if ((checkChoice.id) === "three") {
+      alphabet = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase() //алфавит без Ё
+      console.log(alphabet);
+      }
+      else if ((checkChoice.id) === "four") {
+      alphabet = "АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase() //алфавит без Й и без Ё 
+      console.log(alphabet);
+      }
+      }catch(err){
+       alert("Не удалось выбрать вариант алфавита...")
+      }
+
+
+    }
+    radioCheck();
+
+    let alphabetEn = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toLowerCase(), // en
         
         shiftAmount,
         shiftedAlphabet = "",
         OUTPUT = "",
         STRING,
         otherCharacters = '-+=~\"\'#$%&*^:;±§`_№@<>?/!{(|)}.1234567890\, ' // НЕ БУКВА  => сдвигать не будем, просто вывод
+
 
     let alphabetLength = alphabet.length;
     console.log(alphabetLength);
@@ -93,15 +127,35 @@
       shift: document.getElementById("shift").value
     });
 
-    function choice(){
-			let checkChoice = document.querySelector('input[name="alphabet"]:checked');
-			console.log(checkChoice.value);
-			// if(checkChoice  = null){
-			// 	alert('Необход');
-			// }
-			// else {
-			// 	document.getElementById("disp").innerHTML = "No one selected";
-			// }
-		}
+    // обработка radio
+  //   function choice(){
+  //     let alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase()  //алфавит полностью rus 33 буквы ДЕФОЛТ
+
+  //     let alphabet1 = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase()  //алфавит полностью rus 33 буквы
+  //     let alphabet2 = "АБВГДЕЁЖЗИКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase() //алфавит без Й
+  //     let alphabet3 = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase() //алфавит без Ё
+  //     let alphabet4 = "АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".toLowerCase() //алфавит без Й и без Ё
+
+	// 		let checkChoice = document.querySelector('input[name="alphabet"]:checked');
+	// 		console.log(checkChoice.value);
+  //     console.log(checkChoice.id);
+	// 		if((checkChoice.id) === "one") {
+  //       console.log('first');
+  //       let alphabet = alphabet1;
+	// 	  }
+  //     else if ((checkChoice.id) === "two") {
+  //       console.log('second');
+  //       let alphabet = alphabet2;
+	// 	  }
+  //   else if ((checkChoice.id) === "three") {
+  //     console.log('third');
+  //     let alphabet = alphabet3;
+  //   }
+  //   else if ((checkChoice.id) === "four") {
+  //   console.log('fourth');
+  //   let alphabet = alphabet4; 
+  //   }
+
+  // }
 
 
